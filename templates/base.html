@@ -8,23 +8,25 @@
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
 </head>
 <body>
-<header>
-    <nav>
-        <a href="{% url 'home' %}">Inicio</a>
-        <a href="{% url 'library-home' %}">Biblioteca</a>
-        {% if user.is_authenticated %}
-            <a href="{% url 'panel' %}">Panel</a>
-            <form method="post" action="{% url 'logout' %}" style="display:inline;">
-                {% csrf_token %}
-                <button type="submit">Salir</button>
-            </form>
-        {% else %}
-            <a href="{% url 'login' %}">Login</a>
-            <a href="{% url 'register' %}">Registro</a>
-        {% endif %}
+<header class="site-header">
+    <nav class="site-nav container-wide">
+        <a class="brand" href="{% url 'home' %}">Comunidad de Creadores</a>
+        <div class="nav-links">
+            <a href="{% url 'library-home' %}">Biblioteca</a>
+            {% if user.is_authenticated %}
+                <a href="{% url 'panel' %}">Panel</a>
+                <form method="post" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-outline btn-sm">Salir</button>
+                </form>
+            {% else %}
+                <a href="{% url 'login' %}">Login</a>
+                <a class="btn btn-primary btn-sm" href="{% url 'register' %}">Registro</a>
+            {% endif %}
+        </div>
     </nav>
 </header>
-<main>
+<main class="site-main">
     {% block content %}{% endblock %}
 </main>
 <script src="{% static 'js/main.js' %}"></script>

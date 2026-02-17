@@ -1,8 +1,68 @@
 {% extends 'base.html' %}
 
-{% block title %}Inicio{% endblock %}
+{% block title %}Comunidad de Creadores{% endblock %}
 
 {% block content %}
-<h1>P?gina principal</h1>
-<p>Placeholder del MVP para la comunidad de creadores.</p>
+<section class="hero section-padding">
+    <div class="container-wide">
+        <p class="kicker">Orquestacion para banda</p>
+        <h1>Aprende a orquestar y arreglar para banda con recursos practicos.</h1>
+        <p class="lead">
+            Comunidad gratuita con biblioteca, canal y chat de Telegram, y acompanamiento para convertir ideas en partituras tocables.
+        </p>
+        <div class="hero-actions">
+            <a class="btn btn-primary" href="{% url 'library-home' %}">Entrar a la biblioteca</a>
+            {% if user.is_authenticated %}
+            <a class="btn btn-outline" href="{% url 'panel' %}">Ir al panel</a>
+            {% else %}
+            <a class="btn btn-outline" href="{% url 'register' %}">Crear cuenta gratis</a>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<section class="section-padding surface">
+    <div class="container-wide cards-grid">
+        <article class="card">
+            <h2>Biblioteca publica</h2>
+            <p>Guias, recursos y ejemplos reales para avanzar sin perder tiempo.</p>
+        </article>
+        <article class="card">
+            <h2>Canal y chat</h2>
+            <p>Comunidad para resolver dudas de instrumentacion, balance y textura.</p>
+        </article>
+        <article class="card">
+            <h2>Sesion 1:1</h2>
+            <p>Acompanamiento personalizado para destrabar arreglos concretos.</p>
+        </article>
+    </div>
+</section>
+
+<section class="section-padding">
+    <div class="container-narrow faq">
+        <h2>Preguntas frecuentes</h2>
+        <div class="faq-item">
+            <h3>Es gratis?</h3>
+            <p>Si. La biblioteca y recursos base son gratuitos; el pago se reserva para acompanamiento 1:1.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Que nivel necesito?</h3>
+            <p>Cualquier nivel. El contenido esta pensado para usarlo de forma practica desde el primer dia.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section-padding footer-cta">
+    <div class="container-narrow">
+        <h2>Elige como quieres entrar</h2>
+        <div class="hero-actions">
+            <a class="btn btn-primary" href="{% url 'library-home' %}">Biblioteca</a>
+            {% if user.is_authenticated %}
+            <a class="btn btn-outline" href="{% url 'member-area' %}">Area miembros</a>
+            {% else %}
+            <a class="btn btn-outline" href="{% url 'login' %}">Login</a>
+            {% endif %}
+        </div>
+    </div>
+</section>
 {% endblock %}

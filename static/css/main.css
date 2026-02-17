@@ -1,26 +1,237 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+:root {
+    --background: hsl(0 0% 100%);
+    --foreground: hsl(0 0% 10%);
+    --primary: hsl(17 100% 60%);
+    --primary-hover: hsl(17 100% 54%);
+    --secondary: hsl(0 0% 96%);
+    --muted: hsl(0 0% 45%);
+    --border: hsl(0 0% 90%);
+    --radius: 0.75rem;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: Inter, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
 }
 
-header {
-    background: #222;
-    color: #fff;
-    padding: 12px 16px;
+h1,
+h2,
+h3 {
+    margin: 0;
+    letter-spacing: -0.02em;
 }
 
-nav a,
-nav button {
-    color: #fff;
-    margin-right: 12px;
+p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.65;
+}
+
+a {
+    color: inherit;
     text-decoration: none;
-    background: transparent;
-    border: 0;
-    cursor: pointer;
-    font: inherit;
 }
 
-main {
-    padding: 24px;
+.container-wide,
+.container-narrow {
+    margin: 0 auto;
+    padding: 0 1.25rem;
+}
+
+.container-wide {
+    max-width: 72rem;
+}
+
+.container-narrow {
+    max-width: 56rem;
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    border-bottom: 1px solid var(--border);
+    background: hsla(0 0% 100% / 0.92);
+    backdrop-filter: blur(8px);
+}
+
+.site-nav {
+    min-height: 4.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.brand {
+    font-weight: 800;
+    font-size: 1rem;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.nav-links > a {
+    font-weight: 500;
+}
+
+.site-main {
+    min-height: calc(100vh - 4.5rem);
+}
+
+.section-padding {
+    padding: 4.25rem 0;
+}
+
+.hero {
+    background:
+        radial-gradient(circle at 12% 20%, hsl(17 100% 92%) 0, transparent 32%),
+        radial-gradient(circle at 85% 80%, hsl(17 100% 96%) 0, transparent 34%),
+        var(--background);
+}
+
+.kicker {
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding: 0.35rem 0.8rem;
+    border-radius: 999px;
+    background: hsl(17 100% 95%);
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.hero h1 {
+    max-width: 16ch;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    line-height: 1.06;
+}
+
+.lead {
+    max-width: 52rem;
+    margin-top: 1.3rem;
+    font-size: 1.1rem;
+}
+
+.hero-actions {
+    margin-top: 2rem;
+    display: flex;
+    gap: 0.85rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius);
+    padding: 0.8rem 1.2rem;
+    border: 1px solid var(--border);
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+    border-color: var(--primary-hover);
+}
+
+.btn-outline {
+    background: #fff;
+    color: var(--foreground);
+}
+
+.btn-outline:hover {
+    border-color: hsl(17 100% 80%);
+    color: var(--primary);
+}
+
+.btn-sm {
+    padding: 0.45rem 0.8rem;
+    font-size: 0.9rem;
+}
+
+.surface {
+    background: hsl(0 0% 98%);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.card {
+    border: 1px solid var(--border);
+    background: var(--background);
+    border-radius: 1rem;
+    padding: 1.25rem;
+}
+
+.card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.faq h2 {
+    text-align: center;
+    font-size: clamp(1.7rem, 4vw, 2.5rem);
+    margin-bottom: 1.5rem;
+}
+
+.faq-item {
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    padding: 1rem 1.1rem;
+    margin-bottom: 0.85rem;
+}
+
+.faq-item h3 {
+    margin-bottom: 0.4rem;
+    font-size: 1.05rem;
+}
+
+.footer-cta {
+    background: var(--foreground);
+    text-align: center;
+}
+
+.footer-cta h2 {
+    color: #fff;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+}
+
+.footer-cta .hero-actions {
+    justify-content: center;
+}
+
+.footer-cta p {
+    color: hsl(0 0% 70%);
+}
+
+@media (max-width: 900px) {
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
 }
