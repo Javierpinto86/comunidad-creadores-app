@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Acceso Restringido{% endblock %}
+
+{% block content %}
+<section class="auth-shell">
+    <div class="auth-card">
+        <h1>Acceso restringido</h1>
+        <p>Tu panel de seguimiento requiere una suscripcion activa.</p>
+        <p>Activa tu programa para desbloquear objetivos semanales, entregas y feedback.</p>
+        <p class="hero-actions">
+            <a class="btn btn-primary" href="{% url 'payments-checkout' %}">Ir a pagar</a>
+            <a class="btn btn-outline" href="{% url 'library-home' %}">Volver a biblioteca</a>
+        </p>
+    </div>
+</section>
+{% endblock %}

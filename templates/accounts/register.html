@@ -3,10 +3,19 @@
 {% block title %}Registro{% endblock %}
 
 {% block content %}
-<h1>Crear cuenta</h1>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Registrarse</button>
-</form>
+<section class="auth-shell">
+    <div class="auth-card">
+        <h1>Crear cuenta</h1>
+        <p>Empieza gratis y desbloquea tu panel.</p>
+        <form method="post" class="auth-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary auth-submit">Registrarse</button>
+        </form>
+        <p class="auth-alt">
+            Ya tienes cuenta?
+            <a href="{% url 'login' %}">Inicia sesion</a>
+        </p>
+    </div>
+</section>
 {% endblock %}

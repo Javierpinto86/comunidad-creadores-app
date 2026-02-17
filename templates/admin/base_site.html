@@ -1,0 +1,18 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+
+{% block extrastyle %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'css/admin-theme.css' %}">
+{% endblock %}
+
+{% block branding %}
+<div class="admin-brand-wrap">
+    <a href="{% url 'admin:index' %}" class="admin-brand-link">
+        Comunidad de Creadores
+    </a>
+    <span class="admin-brand-sub">Panel interno</span>
+</div>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

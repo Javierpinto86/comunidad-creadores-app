@@ -3,6 +3,92 @@
 {% block title %}Biblioteca{% endblock %}
 
 {% block content %}
-<h1>Biblioteca p?blica</h1>
-<p>Contenido b?sico de la biblioteca para el MVP.</p>
+<section class="library-page">
+    <div class="library-topbar">
+        <div class="container-wide library-topbar-inner">
+            <div>
+                <p class="library-eyebrow">Comunidad de Creadores</p>
+                <h1>Biblioteca</h1>
+            </div>
+            <div class="library-top-actions">
+                <span class="library-search-placeholder">Buscar contenidos...</span>
+                <a class="library-pill" href="{% url 'home' %}">Volver a la landing</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-wide library-layout">
+        <aside class="library-stack">
+            <article class="library-panel">
+                <p class="library-eyebrow">Navegacion</p>
+                <div class="library-menu">
+                    <span class="library-menu-active">Biblioteca</span>
+                    <span>Anuncios</span>
+                    <span>Comunidad</span>
+                    <span>Sesiones 1:1</span>
+                </div>
+            </article>
+
+            <article class="library-panel">
+                <h3>Acceso rapido</h3>
+                <div class="library-links">
+                    <a class="library-btn-primary" href="https://t.me/+RKShuvIX9y0zNDY0" target="_blank" rel="noreferrer">Canal de Telegram</a>
+                    <a class="library-btn-outline" href="https://javier-pinto1.ipzmarketing.com/f/4OP8O1vI3z8" target="_blank" rel="noreferrer">Suscribirme por correo</a>
+                    <a class="library-btn-outline" href="https://tidycal.com/javierpintomusic/comunidad-de-creadores" target="_blank" rel="noreferrer">Reservar sesion 1:1</a>
+                </div>
+            </article>
+        </aside>
+
+        <section class="library-stack">
+            <article class="library-panel">
+                <h2>Tu biblioteca viva</h2>
+                <p>Entra a los modulos cuando tengas una duda concreta y sigue escribiendo sin perderte en teorias. Todo es opcional y practico.</p>
+                <div class="library-tags">
+                    <span>Acceso gratuito</span>
+                    <span>Orden flexible</span>
+                    <span>Recursos listos para usar</span>
+                </div>
+            </article>
+
+            <article class="library-panel">
+                <h3>Organologia</h3>
+                <p>Como funcionan los instrumentos de banda y como escribir mejor para ellos.</p>
+                <div class="library-actions">
+                    <button type="button" class="library-btn-primary">Ver contenidos</button>
+                    <button type="button" class="library-btn-outline">Guardar</button>
+                </div>
+            </article>
+        </section>
+
+        <aside class="library-stack">
+            <article class="library-panel">
+                <h3>Resumen rapido</h3>
+                <ul class="library-list">
+                    <li>Biblioteca viva de recursos practicos.</li>
+                    <li>Acceso libre, sin presion ni seguimiento.</li>
+                    <li>Comunidad activa por Telegram y correo.</li>
+                </ul>
+            </article>
+
+            <article class="library-panel">
+                <h3>Reserva una sesion 1:1</h3>
+                <p>Trabajamos sobre tu proyecto para desbloquearlo con claridad.</p>
+                <a class="library-btn-primary library-inline-btn" href="https://tidycal.com/javierpintomusic/comunidad-de-creadores" target="_blank" rel="noreferrer">Reservar sesion</a>
+            </article>
+
+            <article class="library-panel">
+                <h3>Contacto</h3>
+                <div class="library-contact">
+                    <a href="https://javier-pinto.com/" target="_blank" rel="noreferrer">Mi Web</a>
+                    <a href="https://tidycal.com/javierpintomusic/comunidad-de-creadores" target="_blank" rel="noreferrer">Reserva tu sesion 1:1</a>
+                    <a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a>
+                    <a href="https://youtube.com" target="_blank" rel="noreferrer">YouTube</a>
+                    <a href="#">Politica de Privacidad</a>
+                    <a href="#">Terminos y condiciones</a>
+                    <a href="#">Aviso Legal</a>
+                </div>
+            </article>
+        </aside>
+    </div>
+</section>
 {% endblock %}

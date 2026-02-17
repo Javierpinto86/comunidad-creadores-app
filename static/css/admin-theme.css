@@ -1,0 +1,93 @@
+:root {
+    --cc-primary: #ff7a33;
+    --cc-primary-dark: #f06d26;
+    --cc-text: #1a1a1a;
+    --cc-muted: #666;
+    --cc-border: #e6e6e6;
+    --cc-bg: #fafafa;
+}
+
+body {
+    font-family: Inter, system-ui, sans-serif;
+    color: var(--cc-text);
+    background: var(--cc-bg);
+}
+
+#header {
+    background: #fff;
+    border-bottom: 1px solid var(--cc-border);
+    color: var(--cc-text);
+}
+
+#site-name a,
+#site-name {
+    color: var(--cc-text);
+    font-weight: 800;
+}
+
+.admin-brand-wrap {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+}
+
+.admin-brand-link {
+    color: var(--cc-text);
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.admin-brand-sub {
+    color: var(--cc-muted);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+#user-tools a:link,
+#user-tools a:visited {
+    color: var(--cc-primary);
+}
+
+a:link,
+a:visited {
+    color: var(--cc-primary-dark);
+}
+
+.button,
+input[type="submit"],
+input[type="button"],
+.submit-row input,
+a.button {
+    background: var(--cc-primary);
+    border-color: var(--cc-primary);
+    color: #fff;
+    border-radius: 10px;
+}
+
+.button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover,
+.submit-row input:hover,
+a.button:hover {
+    background: var(--cc-primary-dark);
+    border-color: var(--cc-primary-dark);
+}
+
+div.breadcrumbs {
+    background: #fff;
+    border-bottom: 1px solid var(--cc-border);
+    color: var(--cc-muted);
+}
+
+.module h2,
+.module caption,
+.inline-group h2 {
+    background: #fff3ec;
+    color: var(--cc-text);
+    border-bottom: 1px solid var(--cc-border);
+}
+
+#content-related .module {
+    border-radius: 12px;
+    overflow: hidden;
+}

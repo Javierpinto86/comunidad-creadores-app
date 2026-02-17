@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block title %}Panel de Seguimiento{% endblock %}
+
+{% block content %}
+<section class="program-page">
+    <div class="program-topbar">
+        <div class="container-wide program-topbar-inner">
+            <div>
+                <p class="library-eyebrow">Comunidad de Creadores</p>
+                <h1>Panel de seguimiento</h1>
+            </div>
+            <div class="program-top-actions">
+                <span class="library-search-placeholder">Alumno: {{ user.username }}</span>
+                <a class="library-pill" href="{% url 'library-home' %}">Ir a Biblioteca</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-wide program-layout">
+        <aside class="program-stack">
+            <article class="library-panel">
+                <p class="library-eyebrow">Navegacion</p>
+                <div class="library-menu">
+                    <span class="library-menu-active">Panel</span>
+                    <span>Objetivo semanal</span>
+                    <span>Entregas</span>
+                    <span>Feedback</span>
+                </div>
+            </article>
+
+            <article class="library-panel">
+                <h3>Acciones rapidas</h3>
+                <div class="library-links">
+                    <a class="library-btn-primary" href="https://t.me/+RKShuvIX9y0zNDY0" target="_blank" rel="noreferrer">Abrir Telegram</a>
+                    <a class="library-btn-outline" href="{% url 'payments-checkout' %}">Estado de pago</a>
+                </div>
+            </article>
+        </aside>
+
+        <section class="program-stack">
+            <article class="library-panel">
+                <h2>Mi proyecto</h2>
+                {% if project %}
+                <p><strong>{{ project.title }}</strong></p>
+                <p>Fase actual: {{ project.get_phase_display }}</p>
+                <p>Hito actual: {{ project.current_milestone|default:"Pendiente de definir" }}</p>
+                <p>Siguiente hito: {{ project.next_milestone|default:"Pendiente de definir" }}</p>
+                {% else %}
+                <p>Aun no tienes proyecto creado. El staff lo configurara durante onboarding.</p>
+                {% endif %}
+            </article>
+
+            <article class="library-panel">
+                <h2>Objetivo semanal</h2>
+                {% if weekly_objective %}
+                <p>Semana de inicio: {{ weekly_objective.week_start_date }}</p>
+                <p>{{ weekly_objective.objective_text }}</p>
+                {% else %}
+                <p>No hay objetivo semanal publicado todavia.</p>
+                {% endif %}
+                <div class="library-tags">
+                    <span>Ritmo semanal</span>
+                    <span>Seguimiento guiado</span>
+                    <span>Proximo paso claro</span>
+                </div>
+            </article>
+
+            <article class="library-panel">
+                <h2>Entregas y feedback</h2>
+                <p>En la siguiente fase se activa formulario semanal con archivos, historial y respuesta del mentor.</p>
+                <div class="library-actions">
+                    <button type="button" class="library-btn-primary">Nueva entrega</button>
+                    <button type="button" class="library-btn-outline">Ver historial</button>
+                </div>
+            </article>
+        </section>
+
+        <aside class="program-stack">
+            <article class="library-panel">
+                <h3>Resumen rapido</h3>
+                <ul class="library-list">
+                    <li>Panel privado de acompanamiento.</li>
+                    <li>Objetivo semanal publicado por staff.</li>
+                    <li>Canal de microdudas por Telegram.</li>
+                </ul>
+            </article>
+
+            <article class="library-panel">
+                <h3>Normas de microduda</h3>
+                <p>Duda concreta + fragmento pequeno + que has probado. Lo complejo pasa a revision semanal.</p>
+            </article>
+        </aside>
+    </div>
+</section>
+{% endblock %}
