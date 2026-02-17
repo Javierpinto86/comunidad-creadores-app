@@ -6,6 +6,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_view, name='home'),
     path('biblioteca/', include('library.urls')),
+    path('pagos/', include('payments.urls')),
     path('', include('accounts.urls')),
     path('panel/', include('membership.urls')),
 ]

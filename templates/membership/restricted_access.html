@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}Acceso Restringido{% endblock %}
+
+{% block content %}
+<h1>Acceso restringido</h1>
+<p>Esta seccion es solo para miembros activos.</p>
+<p>Activa tu membresia para desbloquear el contenido premium.</p>
+<p><a href="{% url 'payments-checkout' %}">Ir a pagar</a></p>
+{% endblock %}

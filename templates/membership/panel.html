@@ -3,6 +3,14 @@
 {% block title %}Panel{% endblock %}
 
 {% block content %}
-<h1>Panel de acompa?amiento - acceso restringido</h1>
-<p>Solo usuarios autenticados pueden ver esta secci?n.</p>
+<h1>Panel de acompanamiento</h1>
+<p>Solo usuarios autenticados pueden ver esta seccion.</p>
+
+{% if user.is_active_member %}
+<p>Tu membresia esta activa.</p>
+<p><a href="{% url 'member-area' %}">Ir al area exclusiva para miembros</a></p>
+{% else %}
+<p>Tu membresia no esta activa todavia.</p>
+<p><a href="{% url 'restricted-access' %}">Ver acceso restringido</a></p>
+{% endif %}
 {% endblock %}
